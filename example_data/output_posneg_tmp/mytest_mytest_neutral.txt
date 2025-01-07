@@ -1,0 +1,14 @@
+Network: sample_data/network_tmp/genelist_phy.tsv
+
+Estimated theta 0.0600
+Log-likelihood ratio 2.2423
+Asymptotic p-value 6.7142e-02
+
+Individual gene efects (no-effect = 0.5496; pos-effect > 0.5496; neg-effect < 0.5496)
+gene	alpha	relative_effect
+PLTP	0.649678604224059	1
+LDLR	0.349403122130395	-2
+PCSK9	0.449494949494949	-1
+FYN	0.449494949494949	-1
+LRRK2	0.649678604224059	1
+Log-likelihood ratio for gene alphas 6.88
