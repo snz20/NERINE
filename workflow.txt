@@ -1,0 +1,42 @@
+***************************************************************************
+* Workflow for assessing rare variant burden in gene networks with NERINE *
+***************************************************************************
+The toy dataset to be used in this example can be found under the "example_data" directory
+
+A. Preparing input mutation counts/frequency tables from a VEP-annotated gzipped VCF file
+   ./NERINE_main.py create_freqtable --glist example_data/genelist.txt --mincutoff_arg 0 --maxcutoff_arg 0.05 
+example_data/mytest.vcf.gz example_data/mytest_casecontrol.fam example_data/ftable_tmp
+   Note: To exclude singletons or ultra-rare variants from the analysis, we recommend utilizing the --mincutoff_arg parameter
+
+B. Generating network adjacency matrices for a given set of genes
+   (i) To generate physical/genetic interactions network:
+       ./NERINE_main.py generate_network --glist example_data/genelist.txt example_data/network_tmp 1 resources phy
+
+   (ii) To generate co-expression network from liver GTEx data:
+        ./NERINE_main.py generate_network --glist example_data/genelist.txt example_data/network_tmp 2 resources 
+gene_tpm_2017-06-05_v8_liver
+
+   (iii) To generate co-essentiality network from DepMap liver cell lines data:
+         ./NERINE_main.py generate_network --glist example_data/genelist.txt example_data/network_tmp 3 resources liver_depmap_df
+
+C. Generating lookup table for a given network
+   (i) To generate lookup table for running the test version that allows only trait-inceasing effects of genes:
+       ./NERINE_main.py generate_lookup -k 1 example_data/genelist_phy.tsv example_data/lookup_tmp
+       Output: Output lookup table will be named genelist_phy_l4.RDS
+
+   (ii) To generate lookup table for running the test version that allows both trait-inceasing and trait-decreasing effects of 
+genes: (default)
+        ./NERINE_main.py generate_lookup -k 2 example_data/genelist_phy.tsv example_data/lookup_tmp
+	Output: Output lookup table will be named genelist_phy_l9.RDS
+
+D. Run NERINE for rare variant association testing in a given gene network
+   (i) To run the test version that allows only trait-inceasing effects of genes:
+       ./NERINE_main.py run_NERINE --glist example_data/genelist.txt -k 1 -n 6 --mincutoff_arg 0 --maxcutoff_arg 0.05
+example_data/ftable_tmp example_data/genelist_phy.tsv example_data/genelist_phy_l4.RDS
+example_data/mytest_casecontrol.fam example_data/output_posonly_tmp
+   
+   (ii) To run the test version that allows both trait-inceasing and trait-decreasing effects of
+genes: (default)
+       ./NERINE_main.py run_NERINE --glist example_data/genelist.txt -k 2 -n 6 --mincutoff_arg 0 --maxcutoff_arg 0.05 
+example_data/ftable_tmp example_data/genelist_phy.tsv example_data/genelist_phy_l9.RDS 
+example_data/mytest_casecontrol.fam example_data/output_posneg_tmp
