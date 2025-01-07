@@ -6,8 +6,11 @@ An abstract on this work was presented at ESHG 2024 and medRxiv pre-print can be
 
 ## Requirments
 Python >= 3.12.4
+
 R >= 4.3.2
+
 Python packages: numpy, pandas, scipy.stats, bz2, gzip, seaborn, networkx
+
 R packages: MASS, Matrix, matrixcalc, mvtnorm, sinib, prodlim, foreach, zeallot, plyr, ggplot2, parallel, foreach, doParallel, stringr, dplyr, emdbook, eva, DescTools
 
 ## Directory structure
