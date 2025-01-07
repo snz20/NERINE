@@ -12,8 +12,12 @@ R packages: MASS, Matrix, matrixcalc, mvtnorm, sinib, prodlim, foreach, zeallot,
 
 ## Directory structure
 ./: contains the main scripts required to run NERINE
+
 util/: python script containing utility functions
-resources/: database files to facilitate network generation from protein interactions, co-expression, and co-essentiality
+
+resources/: database files to facilitate network generation from 
+protein interactions, co-expression, and co-essentiality
+
 example_data/: toy data for doing a test run of NERINE
 
 ## Usage
