@@ -28,13 +28,20 @@ Modes:
 ./NERINE_main.py [-h] {create_freqtable, generate_network, generate_lookup, run_NERINE}
 
 1. Create freqtables for NERINE's input from a given gzipped VCF file (Mode = create_freqtable)
+
    ./NERINE_main.py create_freqtable [-h] [--glist GENELIST_ARG] [--mincutoff_arg MINCUTOFF_ARG] [--maxcutoff_arg MAXCUTOFF_ARG] in_vcf in_fam ftable_dir
+
 2. Generate network adjacency matrix from a list of genes using database edges in absence of user-defined topology (Mode = generate_network)
+
    ./NERINE_main.py generate_network [-h] [--glist GENELIST_ARG] network_dir network_type resource_dir resource_prefix
-3. Generate lookup table for NERINE's likelihood calculation (Mode = generate_lookup)
+
+4. Generate lookup table for NERINE's likelihood calculation (Mode = generate_lookup)
+
    ./NERINE_main.py generate_lookup [-h] [-k TESTTYPE_ARG] network_file lookup_dir
-4. Run network-level rare variant association test with NERINE (Mode = run_NERINE)
-   NERINE_main.py run_NERINE [-h] [--glist GENELIST_ARG] [-k TESTTYPE_ARG] [-n NUMCORE_ARG] [--mincutoff_arg MINCUTOFF_ARG] [--maxcutoff_arg MAXCUTOFF_ARG] ftable_dir network_file lt_file in_fam out_dir
+
+6. Run network-level rare variant association test with NERINE (Mode = run_NERINE)
+
+   ./NERINE_main.py run_NERINE [-h] [--glist GENELIST_ARG] [-k TESTTYPE_ARG] [-n NUMCORE_ARG] [--mincutoff_arg MINCUTOFF_ARG] [--maxcutoff_arg MAXCUTOFF_ARG] ftable_dir network_file lt_file in_fam out_dir
 
 Steps to be followed in a typical workflow is given in the workflow.txt file.
 
