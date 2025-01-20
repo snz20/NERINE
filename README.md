@@ -1,8 +1,8 @@
 # NERINE
 This code is associated with the following manuscript. If you use any part of the source code, please cite us:
-Sumaiya Nazeen _et. al._ **NERINE reveals rare variant associations in gene networks across multiple phenotypes and implicates an _SNCA-PRL-LRRK2_ subnetwork in Parkinson’s disease** (submitted to _Nature Genetics_)
+Sumaiya Nazeen _et. al._ **NERINE reveals rare variant associations in gene networks across multiple phenotypes and implicates an _SNCA-PRL-LRRK2_ subnetwork in Parkinson’s disease**
 
-An abstract on this work was presented at ESHG 2024.
+An abstract on this work was presented at ESHG 2024. Preprint is available at https://www.biorxiv.org/content/10.1101/2025.01.07.631688v1
 
 ## Requirments
 Python >= 3.12.4
